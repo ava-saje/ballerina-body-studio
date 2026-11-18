@@ -77,20 +77,21 @@
         { "exerciseId": "EX-CORE-01", "sets": 3, "metric": "seconds", "value": 30, "perSide": false, "restSeconds": 30 }
       ]
     },
+
     {
       "id": "WT-legs-glutes-none",
       "name": "The Ballerina Burn",
       "focusArea": "legs-glutes",
       "equipment": "none",
-      "intro": "A barre-inspired lower body burn — small, precise movements that build long, strong lines.",
+      "intro": "A barre-inspired lower body burn, built to hit every part of your legs: quads, hamstrings, glutes, and single-leg balance work.",
       "warmupIds": ["EX-WARM-03", "EX-WARM-06"],
       "cooldownIds": ["EX-COOL-01", "EX-COOL-05"],
       "sequence": [
         { "exerciseId": "EX-LEG-01", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
-        { "exerciseId": "EX-LEG-03", "sets": 3, "metric": "reps", "value": 12, "perSide": true, "restSeconds": 30 },
-        { "exerciseId": "EX-LEG-05", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 },
+        { "exerciseId": "EX-LEG-06", "sets": 3, "metric": "reps", "value": 12, "perSide": true, "restSeconds": 20 },
         { "exerciseId": "EX-LEG-04", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 30 },
-        { "exerciseId": "EX-LEG-06", "sets": 3, "metric": "reps", "value": 12, "perSide": true, "restSeconds": 20 }
+        { "exerciseId": "EX-LEG-03", "sets": 3, "metric": "reps", "value": 12, "perSide": true, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-07", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 }
       ]
     },
     {
@@ -98,14 +99,15 @@
       "name": "The Ballerina Burn",
       "focusArea": "legs-glutes",
       "equipment": "dumbbells",
-      "intro": "A barre-inspired lower body burn with light dumbbells added for a deeper sculpt.",
+      "intro": "A lower body burn with light dumbbells added, built to hit every part of your legs: quads, hamstrings, glutes, and single-leg balance work.",
       "warmupIds": ["EX-WARM-03", "EX-WARM-06"],
       "cooldownIds": ["EX-COOL-01", "EX-COOL-05"],
       "sequence": [
         { "exerciseId": "EX-LEG-09", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
-        { "exerciseId": "EX-LEG-11", "sets": 3, "metric": "reps", "value": 12, "perSide": true, "restSeconds": 30 },
         { "exerciseId": "EX-LEG-10", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
-        { "exerciseId": "EX-LEG-04", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 20 }
+        { "exerciseId": "EX-LEG-30", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-11", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-31", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 30 }
       ]
     },
     {
@@ -113,14 +115,15 @@
       "name": "The Ballerina Burn",
       "focusArea": "legs-glutes",
       "equipment": "bands",
-      "intro": "A barre-inspired lower body burn powered by resistance bands, for a deep, steady burn.",
+      "intro": "A lower body burn powered by resistance bands, built to hit every part of your legs: quads, hamstrings, glutes, and single-leg balance work.",
       "warmupIds": ["EX-WARM-03", "EX-WARM-06"],
       "cooldownIds": ["EX-COOL-01", "EX-COOL-05"],
       "sequence": [
         { "exerciseId": "EX-LEG-14", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
-        { "exerciseId": "EX-LEG-12", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 },
+        { "exerciseId": "EX-LEG-25", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-32", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-LEG-13", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 },
-        { "exerciseId": "EX-LEG-04", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 20 }
+        { "exerciseId": "EX-LEG-26", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 }
       ]
     },
     {
@@ -128,13 +131,14 @@
       "name": "The Ballerina Burn",
       "focusArea": "legs-glutes",
       "equipment": "gym",
-      "intro": "A lower body burn built around the gym's best tools — barbell, cable and bench — for serious strength.",
+      "intro": "A lower body burn built around the gym's best tools, hitting every part of your legs: quads, hamstrings, glutes, and single-leg balance work.",
       "warmupIds": ["EX-WARM-03", "EX-WARM-06"],
       "cooldownIds": ["EX-COOL-01", "EX-COOL-05"],
       "sequence": [
         { "exerciseId": "EX-LEG-15", "sets": 3, "metric": "reps", "value": 10, "perSide": false, "restSeconds": 45 },
-        { "exerciseId": "EX-LEG-18", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-27", "sets": 3, "metric": "reps", "value": 10, "perSide": false, "restSeconds": 45 },
         { "exerciseId": "EX-LEG-19", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-18", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 30 },
         { "exerciseId": "EX-LEG-17", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 }
       ]
     },
@@ -143,30 +147,31 @@
       "name": "The Ballerina Burn",
       "focusArea": "legs-glutes",
       "equipment": "ankle-weights",
-      "intro": "A barre-inspired lower body burn with ankle weights adding resistance to every lift and kick.",
+      "intro": "A lower body burn with ankle weights adding resistance, built to hit every part of your legs: quads, hamstrings, glutes, and single-leg balance work.",
       "warmupIds": ["EX-WARM-03", "EX-WARM-06"],
       "cooldownIds": ["EX-COOL-01", "EX-COOL-05"],
       "sequence": [
-        { "exerciseId": "EX-LEG-20", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 },
+        { "exerciseId": "EX-LEG-28", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 },
+        { "exerciseId": "EX-LEG-29", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 },
+        { "exerciseId": "EX-LEG-33", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-LEG-21", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 },
-        { "exerciseId": "EX-LEG-22", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 },
-        { "exerciseId": "EX-LEG-04", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 30 }
+        { "exerciseId": "EX-LEG-22", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 }
       ]
     },
+
     {
       "id": "WT-core-none",
       "name": "The Ballerina Core",
       "focusArea": "core",
       "equipment": "none",
-      "intro": "A quiet, powerful core session built on control, not crunches — think Pilates meets barre.",
+      "intro": "A quiet, powerful core session built on control, not crunches — covering every corner: upper abs, lower abs, obliques, and stability.",
       "warmupIds": ["EX-WARM-04", "EX-WARM-05"],
       "cooldownIds": ["EX-COOL-02", "EX-COOL-03"],
       "sequence": [
         { "exerciseId": "EX-CORE-01", "sets": 3, "metric": "seconds", "value": 30, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-CORE-03", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 20 },
         { "exerciseId": "EX-CORE-02", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 },
-        { "exerciseId": "EX-CORE-05", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 20 },
-        { "exerciseId": "EX-CORE-07", "sets": 3, "metric": "seconds", "value": 20, "perSide": true, "restSeconds": 20 }
+        { "exerciseId": "EX-CORE-05", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 20 }
       ]
     },
     {
@@ -174,14 +179,14 @@
       "name": "The Ballerina Core",
       "focusArea": "core",
       "equipment": "dumbbells",
-      "intro": "A quiet, powerful core session with a touch of added resistance for a deeper burn.",
+      "intro": "A quiet, powerful core session with a touch of added resistance, covering every corner: upper abs, lower abs, obliques, and stability.",
       "warmupIds": ["EX-WARM-04", "EX-WARM-05"],
       "cooldownIds": ["EX-COOL-02", "EX-COOL-03"],
       "sequence": [
         { "exerciseId": "EX-CORE-01", "sets": 3, "metric": "seconds", "value": 30, "perSide": false, "restSeconds": 30 },
-        { "exerciseId": "EX-CORE-09", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 20 },
+        { "exerciseId": "EX-CORE-16", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-CORE-02", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 },
-        { "exerciseId": "EX-CORE-06", "sets": 3, "metric": "seconds", "value": 20, "perSide": false, "restSeconds": 20 }
+        { "exerciseId": "EX-CORE-09", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 20 }
       ]
     },
     {
@@ -189,14 +194,14 @@
       "name": "The Ballerina Core",
       "focusArea": "core",
       "equipment": "bands",
-      "intro": "A quiet, powerful core session powered by resistance bands, for steady, controlled tension.",
+      "intro": "A quiet, powerful core session powered by resistance bands, covering every corner: upper abs, lower abs, obliques, and stability.",
       "warmupIds": ["EX-WARM-04", "EX-WARM-05"],
       "cooldownIds": ["EX-COOL-02", "EX-COOL-03"],
       "sequence": [
         { "exerciseId": "EX-CORE-01", "sets": 3, "metric": "seconds", "value": 30, "perSide": false, "restSeconds": 30 },
-        { "exerciseId": "EX-CORE-10", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 },
         { "exerciseId": "EX-CORE-03", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 20 },
-        { "exerciseId": "EX-CORE-07", "sets": 3, "metric": "seconds", "value": 20, "perSide": true, "restSeconds": 20 }
+        { "exerciseId": "EX-CORE-10", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 },
+        { "exerciseId": "EX-CORE-05", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 20 }
       ]
     },
     {
@@ -204,14 +209,14 @@
       "name": "The Ballerina Core",
       "focusArea": "core",
       "equipment": "gym",
-      "intro": "A powerful core session using cables and machines for resistance you can't get from bodyweight alone.",
+      "intro": "A powerful core session using cables and machines, covering every corner: upper abs, lower abs, obliques, and stability.",
       "warmupIds": ["EX-WARM-04", "EX-WARM-05"],
       "cooldownIds": ["EX-COOL-02", "EX-COOL-03"],
       "sequence": [
+        { "exerciseId": "EX-CORE-01", "sets": 3, "metric": "seconds", "value": 30, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-CORE-13", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-CORE-12", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
-        { "exerciseId": "EX-CORE-11", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 },
-        { "exerciseId": "EX-CORE-14", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 20 }
+        { "exerciseId": "EX-CORE-11", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 }
       ]
     },
     {
@@ -219,28 +224,29 @@
       "name": "The Ballerina Core",
       "focusArea": "core",
       "equipment": "ankle-weights",
-      "intro": "A quiet, powerful core session with ankle weights adding resistance to every leg extension.",
+      "intro": "A quiet, powerful core session with ankle weights adding resistance, covering every corner: upper abs, lower abs, obliques, and stability.",
       "warmupIds": ["EX-WARM-04", "EX-WARM-05"],
       "cooldownIds": ["EX-COOL-02", "EX-COOL-03"],
       "sequence": [
         { "exerciseId": "EX-CORE-01", "sets": 3, "metric": "seconds", "value": 30, "perSide": false, "restSeconds": 30 },
-        { "exerciseId": "EX-CORE-15", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 },
         { "exerciseId": "EX-CORE-03", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 20 },
+        { "exerciseId": "EX-CORE-15", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 },
         { "exerciseId": "EX-CORE-05", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 20 }
       ]
     },
+
     {
       "id": "WT-arms-posture-none",
       "name": "The Ballerina Arms Edit",
       "focusArea": "arms-posture",
       "equipment": "none",
-      "intro": "Sculpted arms and a lifted, open posture — the finishing touch of a dancer's upper body.",
+      "intro": "Sculpted arms and a lifted, open posture, covering every corner: biceps, triceps, shoulders, and back.",
       "warmupIds": ["EX-WARM-02", "EX-WARM-05"],
       "cooldownIds": ["EX-COOL-04", "EX-COOL-03"],
       "sequence": [
-        { "exerciseId": "EX-ARM-01", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 20 },
-        { "exerciseId": "EX-ARM-03", "sets": 3, "metric": "reps", "value": 10, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-ARM-15", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 20 },
         { "exerciseId": "EX-ARM-04", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-ARM-01", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 20 },
         { "exerciseId": "EX-ARM-02", "sets": 3, "metric": "seconds", "value": 20, "perSide": false, "restSeconds": 20 }
       ]
     },
@@ -249,14 +255,14 @@
       "name": "The Ballerina Arms Edit",
       "focusArea": "arms-posture",
       "equipment": "dumbbells",
-      "intro": "Sculpted arms and a lifted, open posture, built with light dumbbells for definition.",
+      "intro": "Sculpted arms and a lifted, open posture, built with light dumbbells, covering every corner: biceps, triceps, shoulders, and back.",
       "warmupIds": ["EX-WARM-02", "EX-WARM-05"],
       "cooldownIds": ["EX-COOL-04", "EX-COOL-03"],
       "sequence": [
         { "exerciseId": "EX-ARM-05", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 20 },
+        { "exerciseId": "EX-ARM-06", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 20 },
         { "exerciseId": "EX-ARM-07", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 20 },
-        { "exerciseId": "EX-ARM-08", "sets": 3, "metric": "reps", "value": 10, "perSide": false, "restSeconds": 30 },
-        { "exerciseId": "EX-ARM-06", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 20 }
+        { "exerciseId": "EX-ARM-16", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 }
       ]
     },
     {
@@ -264,14 +270,14 @@
       "name": "The Ballerina Arms Edit",
       "focusArea": "arms-posture",
       "equipment": "bands",
-      "intro": "Sculpted arms and a lifted, open posture, powered by resistance bands.",
+      "intro": "Sculpted arms and a lifted, open posture, powered by resistance bands, covering every corner: biceps, triceps, shoulders, and back.",
       "warmupIds": ["EX-WARM-02", "EX-WARM-05"],
       "cooldownIds": ["EX-COOL-04", "EX-COOL-03"],
       "sequence": [
+        { "exerciseId": "EX-ARM-17", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 20 },
+        { "exerciseId": "EX-ARM-18", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 20 },
         { "exerciseId": "EX-ARM-09", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 20 },
-        { "exerciseId": "EX-ARM-10", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 20 },
-        { "exerciseId": "EX-ARM-01", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 20 },
-        { "exerciseId": "EX-ARM-02", "sets": 3, "metric": "seconds", "value": 20, "perSide": false, "restSeconds": 20 }
+        { "exerciseId": "EX-ARM-10", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 20 }
       ]
     },
     {
@@ -279,14 +285,14 @@
       "name": "The Ballerina Arms Edit",
       "focusArea": "arms-posture",
       "equipment": "gym",
-      "intro": "Sculpted arms and a lifted, open posture, built using the gym's cable and barbell stations.",
+      "intro": "Sculpted arms and a lifted, open posture, built using the gym's cable and barbell stations, covering every corner: biceps, triceps, shoulders, and back.",
       "warmupIds": ["EX-WARM-02", "EX-WARM-05"],
       "cooldownIds": ["EX-COOL-04", "EX-COOL-03"],
       "sequence": [
-        { "exerciseId": "EX-ARM-11", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
-        { "exerciseId": "EX-ARM-13", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-ARM-19", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 20 },
+        { "exerciseId": "EX-ARM-12", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 20 },
         { "exerciseId": "EX-ARM-14", "sets": 3, "metric": "reps", "value": 10, "perSide": false, "restSeconds": 30 },
-        { "exerciseId": "EX-ARM-12", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 20 }
+        { "exerciseId": "EX-ARM-11", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 }
       ]
     }
   ]

@@ -3,6 +3,21 @@ import { attachRestTimer } from "./timer.js";
 
 const GUIDE_URL = "#";
 
+const MUSCLE_LABELS = {
+  quads: "Quads",
+  hamstrings: "Hamstrings",
+  glutes: "Glutes",
+  "single-leg": "Single-Leg",
+  "upper-abs": "Upper Abs",
+  "lower-abs": "Lower Abs",
+  obliques: "Obliques",
+  stability: "Stability",
+  biceps: "Biceps",
+  triceps: "Triceps",
+  shoulders: "Shoulders",
+  back: "Back"
+};
+
 function formatAmount(item) {
   const amount = item.metric === "seconds" ? `${item.value} sec` : `${item.value} reps`;
   return item.perSide ? `${amount} each side` : amount;
@@ -25,18 +40,17 @@ function sequenceBlock(item, index) {
   const timerId = `rest-timer-${index}`;
   const choices = [item.exercise, ...item.alternatives];
   const hasAlternatives = choices.length > 1;
+  const muscleLabel = MUSCLE_LABELS[item.exercise.muscle] || "";
 
-  const rows = [];
-  if (item.roundLabel) {
-    rows.push(`<li class="round-label-row"><p class="round-label">${item.roundLabel}</p></li>`);
-  }
-
-  rows.push(`
-    <li class="exercise-row sequence-row" data-index="${index}">
+  return `
+    <li class="exercise-card" data-index="${index}">
       <details open>
         <summary>
           <span class="exercise-step">${index + 1}</span>
-          <span class="exercise-name" id="exercise-name-${index}">${item.exercise.name}</span>
+          <span class="exercise-heading">
+            <span class="exercise-name" id="exercise-name-${index}">${item.exercise.name}</span>
+            ${muscleLabel ? `<span class="muscle-tag" id="muscle-tag-${index}">${muscleLabel}</span>` : ""}
+          </span>
         </summary>
         <p class="exercise-meta">${item.sets} sets · ${formatAmount(item)}</p>
         <p class="exercise-instructions" id="exercise-instructions-${index}">${item.exercise.instructions}</p>
@@ -45,9 +59,7 @@ function sequenceBlock(item, index) {
           ${hasAlternatives ? `<button class="swap-btn" type="button" data-index="${index}">Swap exercise ↻</button>` : ""}
         </div>
       </details>
-    </li>`);
-
-  return rows.join("");
+    </li>`;
 }
 
 export function renderResults(container, workout, shareUrl) {
@@ -111,6 +123,8 @@ export function renderResults(container, workout, shareUrl) {
       const choice = choices[next];
       document.getElementById(`exercise-name-${index}`).textContent = choice.name;
       document.getElementById(`exercise-instructions-${index}`).textContent = choice.instructions;
+      const muscleTagEl = document.getElementById(`muscle-tag-${index}`);
+      if (muscleTagEl) muscleTagEl.textContent = MUSCLE_LABELS[choice.muscle] || "";
     });
   });
 

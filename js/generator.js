@@ -24,25 +24,15 @@ function scaleSequenceItem(item, difficulty) {
 
 function buildRoundsForDuration(sequence, time) {
   if (time <= 20) {
-    return [{ label: null, items: sequence }];
+    return [sequence];
   }
   if (time <= 30) {
-    return [
-      { label: null, items: sequence },
-      { label: "Finisher round", items: sequence.slice(0, 2) }
-    ];
+    return [sequence, sequence.slice(0, 2)];
   }
   if (time <= 45) {
-    return [
-      { label: "Round 1", items: sequence },
-      { label: "Round 2", items: sequence }
-    ];
+    return [sequence, sequence];
   }
-  return [
-    { label: "Round 1", items: sequence },
-    { label: "Round 2", items: sequence },
-    { label: "Finisher round", items: sequence.slice(0, 2) }
-  ];
+  return [sequence, sequence, sequence.slice(0, 2)];
 }
 
 function findTemplate(templates, focus, equipmentSet) {
@@ -75,12 +65,9 @@ export function generateWorkout(answers, exercisesData, templatesData) {
 
   const rounds = buildRoundsForDuration(template.sequence, time);
   const flatSequence = [];
-  rounds.forEach((round) => {
-    round.items.forEach((item, idx) => {
-      flatSequence.push({
-        ...scaleSequenceItem(item, level),
-        roundLabel: idx === 0 ? round.label : null
-      });
+  rounds.forEach((items) => {
+    items.forEach((item) => {
+      flatSequence.push(scaleSequenceItem(item, level));
     });
   });
 
@@ -99,7 +86,6 @@ export function generateWorkout(answers, exercisesData, templatesData) {
       value: item.value,
       perSide: item.perSide,
       restSeconds: item.restSeconds,
-      roundLabel: item.roundLabel,
       alternatives
     };
   });
