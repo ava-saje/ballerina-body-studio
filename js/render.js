@@ -4,10 +4,11 @@ import { attachRestTimer } from "./timer.js";
 const GUIDE_URL = "#";
 
 const MUSCLE_LABELS = {
-  quads: "Quads",
-  hamstrings: "Hamstrings",
   glutes: "Glutes",
+  hamstrings: "Hamstrings",
   "single-leg": "Single-Leg",
+  calves: "Calves",
+  flexibility: "Flexibility",
   "upper-abs": "Upper Abs",
   "lower-abs": "Lower Abs",
   obliques: "Obliques",

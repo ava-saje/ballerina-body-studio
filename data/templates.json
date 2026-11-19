@@ -9,7 +9,7 @@
       "warmupIds": ["EX-WARM-01", "EX-WARM-06"],
       "cooldownIds": ["EX-COOL-02", "EX-COOL-04"],
       "sequence": [
-        { "exerciseId": "EX-LEG-02", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-06", "sets": 3, "metric": "reps", "value": 12, "perSide": true, "restSeconds": 30 },
         { "exerciseId": "EX-ARM-03", "sets": 3, "metric": "reps", "value": 10, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-LEG-03", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 30 },
         { "exerciseId": "EX-CORE-01", "sets": 3, "metric": "seconds", "value": 30, "perSide": false, "restSeconds": 30 },
@@ -25,7 +25,7 @@
       "warmupIds": ["EX-WARM-01", "EX-WARM-06"],
       "cooldownIds": ["EX-COOL-02", "EX-COOL-04"],
       "sequence": [
-        { "exerciseId": "EX-LEG-09", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-30", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-LEG-10", "sets": 3, "metric": "reps", "value": 10, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-ARM-08", "sets": 3, "metric": "reps", "value": 10, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-CORE-01", "sets": 3, "metric": "seconds", "value": 30, "perSide": false, "restSeconds": 30 }
@@ -40,7 +40,7 @@
       "warmupIds": ["EX-WARM-01", "EX-WARM-05"],
       "cooldownIds": ["EX-COOL-02", "EX-COOL-04"],
       "sequence": [
-        { "exerciseId": "EX-LEG-14", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-25", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-ARM-10", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 20 },
         { "exerciseId": "EX-LEG-12", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 },
         { "exerciseId": "EX-ARM-09", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 20 },
@@ -56,7 +56,7 @@
       "warmupIds": ["EX-WARM-01", "EX-WARM-06"],
       "cooldownIds": ["EX-COOL-02", "EX-COOL-04"],
       "sequence": [
-        { "exerciseId": "EX-LEG-15", "sets": 3, "metric": "reps", "value": 10, "perSide": false, "restSeconds": 45 },
+        { "exerciseId": "EX-LEG-19", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-ARM-13", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-ARM-14", "sets": 3, "metric": "reps", "value": 10, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-CORE-01", "sets": 3, "metric": "seconds", "value": 30, "perSide": false, "restSeconds": 30 }
@@ -83,15 +83,16 @@
       "name": "The Ballerina Burn",
       "focusArea": "legs-glutes",
       "equipment": "none",
-      "intro": "A barre-inspired lower body burn, built to hit every part of your legs: quads, hamstrings, glutes, and single-leg balance work.",
+      "intro": "A barre-inspired lower body burn built around glutes, hamstrings, single-leg balance work, and calves — no quad-dominant moves, just the way ballet trains legs.",
       "warmupIds": ["EX-WARM-03", "EX-WARM-06"],
       "cooldownIds": ["EX-COOL-01", "EX-COOL-05"],
       "sequence": [
-        { "exerciseId": "EX-LEG-01", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-04", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-LEG-06", "sets": 3, "metric": "reps", "value": 12, "perSide": true, "restSeconds": 20 },
-        { "exerciseId": "EX-LEG-04", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-LEG-03", "sets": 3, "metric": "reps", "value": 12, "perSide": true, "restSeconds": 30 },
-        { "exerciseId": "EX-LEG-07", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 }
+        { "exerciseId": "EX-LEG-07", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 },
+        { "exerciseId": "EX-LEG-34", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 20 },
+        { "exerciseId": "EX-LEG-38", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 }
       ]
     },
     {
@@ -99,15 +100,16 @@
       "name": "The Ballerina Burn",
       "focusArea": "legs-glutes",
       "equipment": "dumbbells",
-      "intro": "A lower body burn with light dumbbells added, built to hit every part of your legs: quads, hamstrings, glutes, and single-leg balance work.",
+      "intro": "A lower body burn with light dumbbells added, built around glutes, hamstrings, single-leg balance work, and calves — no quad-dominant moves, just the way ballet trains legs.",
       "warmupIds": ["EX-WARM-03", "EX-WARM-06"],
       "cooldownIds": ["EX-COOL-01", "EX-COOL-05"],
       "sequence": [
-        { "exerciseId": "EX-LEG-09", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
-        { "exerciseId": "EX-LEG-10", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-LEG-30", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-10", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-31", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 30 },
         { "exerciseId": "EX-LEG-11", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 30 },
-        { "exerciseId": "EX-LEG-31", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 30 }
+        { "exerciseId": "EX-LEG-36", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 20 },
+        { "exerciseId": "EX-LEG-38", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 }
       ]
     },
     {
@@ -115,15 +117,16 @@
       "name": "The Ballerina Burn",
       "focusArea": "legs-glutes",
       "equipment": "bands",
-      "intro": "A lower body burn powered by resistance bands, built to hit every part of your legs: quads, hamstrings, glutes, and single-leg balance work.",
+      "intro": "A lower body burn powered by resistance bands, built around glutes, hamstrings, single-leg balance work, and calves — no quad-dominant moves, just the way ballet trains legs.",
       "warmupIds": ["EX-WARM-03", "EX-WARM-06"],
       "cooldownIds": ["EX-COOL-01", "EX-COOL-05"],
       "sequence": [
-        { "exerciseId": "EX-LEG-14", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
-        { "exerciseId": "EX-LEG-25", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
         { "exerciseId": "EX-LEG-32", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-25", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-26", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 },
         { "exerciseId": "EX-LEG-13", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 },
-        { "exerciseId": "EX-LEG-26", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 }
+        { "exerciseId": "EX-LEG-34", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 20 },
+        { "exerciseId": "EX-LEG-38", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 }
       ]
     },
     {
@@ -131,15 +134,16 @@
       "name": "The Ballerina Burn",
       "focusArea": "legs-glutes",
       "equipment": "gym",
-      "intro": "A lower body burn built around the gym's best tools, hitting every part of your legs: quads, hamstrings, glutes, and single-leg balance work.",
+      "intro": "A lower body burn built around the gym's best tools, hitting glutes, hamstrings, single-leg balance work, and calves — no quad-dominant moves, just the way ballet trains legs.",
       "warmupIds": ["EX-WARM-03", "EX-WARM-06"],
       "cooldownIds": ["EX-COOL-01", "EX-COOL-05"],
       "sequence": [
-        { "exerciseId": "EX-LEG-15", "sets": 3, "metric": "reps", "value": 10, "perSide": false, "restSeconds": 45 },
-        { "exerciseId": "EX-LEG-27", "sets": 3, "metric": "reps", "value": 10, "perSide": false, "restSeconds": 45 },
         { "exerciseId": "EX-LEG-19", "sets": 3, "metric": "reps", "value": 12, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-27", "sets": 3, "metric": "reps", "value": 10, "perSide": false, "restSeconds": 45 },
         { "exerciseId": "EX-LEG-18", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 30 },
-        { "exerciseId": "EX-LEG-17", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 }
+        { "exerciseId": "EX-LEG-17", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 },
+        { "exerciseId": "EX-LEG-37", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-38", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 }
       ]
     },
     {
@@ -147,15 +151,16 @@
       "name": "The Ballerina Burn",
       "focusArea": "legs-glutes",
       "equipment": "ankle-weights",
-      "intro": "A lower body burn with ankle weights adding resistance, built to hit every part of your legs: quads, hamstrings, glutes, and single-leg balance work.",
+      "intro": "A lower body burn with ankle weights adding resistance, built around glutes, hamstrings, single-leg balance work, and calves — no quad-dominant moves, just the way ballet trains legs.",
       "warmupIds": ["EX-WARM-03", "EX-WARM-06"],
       "cooldownIds": ["EX-COOL-01", "EX-COOL-05"],
       "sequence": [
-        { "exerciseId": "EX-LEG-28", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 },
-        { "exerciseId": "EX-LEG-29", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 },
         { "exerciseId": "EX-LEG-33", "sets": 3, "metric": "reps", "value": 15, "perSide": false, "restSeconds": 30 },
+        { "exerciseId": "EX-LEG-29", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 },
+        { "exerciseId": "EX-LEG-24", "sets": 3, "metric": "reps", "value": 12, "perSide": true, "restSeconds": 30 },
         { "exerciseId": "EX-LEG-21", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 },
-        { "exerciseId": "EX-LEG-22", "sets": 3, "metric": "reps", "value": 15, "perSide": true, "restSeconds": 20 }
+        { "exerciseId": "EX-LEG-34", "sets": 3, "metric": "reps", "value": 20, "perSide": false, "restSeconds": 20 },
+        { "exerciseId": "EX-LEG-38", "sets": 3, "metric": "reps", "value": 10, "perSide": true, "restSeconds": 20 }
       ]
     },
 
