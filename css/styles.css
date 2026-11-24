@@ -52,18 +52,19 @@ a { color: inherit; }
 /* ---------- Landing ---------- */
 
 #view-landing {
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 32px 24px 56px;
-  background: radial-gradient(circle at 50% 0%, var(--blush) 0%, var(--ivory) 62%);
+  padding: 56px 24px 56px;
+  background: var(--ivory);
 }
 
 .landing-inner {
   max-width: 480px;
-  text-align: center;
+  width: 100%;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .eyebrow {
@@ -73,25 +74,6 @@ a { color: inherit; }
   color: var(--dusty-rose);
   font-weight: 600;
   margin: 0 0 18px;
-}
-
-.ribbon-divider {
-  width: 64px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--dusty-rose), transparent);
-  margin-bottom: 22px;
-  position: relative;
-}
-
-.ribbon-divider::after {
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  width: 8px;
-  height: 8px;
-  background: var(--dusty-rose);
 }
 
 .headline {
@@ -113,10 +95,26 @@ a { color: inherit; }
 .supporting {
   font-size: 15px;
   color: var(--plum-soft);
-  margin: 0 0 34px;
-  max-width: 320px;
+  margin: 0 0 28px;
+  max-width: 360px;
   line-height: 1.5;
 }
+
+.landing-features {
+  list-style: none;
+  margin: 0 0 34px;
+  padding: 0;
+  width: 100%;
+}
+
+.landing-features li {
+  font-size: 14.5px;
+  color: var(--plum);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--champagne);
+}
+
+.landing-features li:first-child { border-top: 1px solid var(--champagne); }
 
 .free-note {
   margin-top: 18px;
@@ -135,7 +133,7 @@ a { color: inherit; }
   font-size: 15.5px;
   font-weight: 600;
   letter-spacing: 0.02em;
-  box-shadow: var(--shadow-soft);
+  width: 100%;
   transition: transform 0.18s ease, background 0.18s ease, opacity 0.18s ease;
 }
 
@@ -160,7 +158,7 @@ a { color: inherit; }
 
 #view-quiz {
   background: var(--ivory);
-  padding: 20px 20px 60px;
+  padding: 28px 20px 60px;
   align-items: center;
 }
 
@@ -170,44 +168,63 @@ a { color: inherit; }
 }
 
 .quiz-top {
+  margin-bottom: 32px;
+}
+
+.quiz-top-row {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 36px;
+  justify-content: space-between;
+  margin-bottom: 14px;
 }
 
 .quiz-back {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 14px;
+  font-weight: 600;
   color: var(--plum);
-  padding: 6px;
+  padding: 4px 0;
   line-height: 1;
-  border-radius: 50%;
 }
 
-.quiz-back:hover { background: var(--blush); }
+.quiz-step-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--plum-soft);
+  letter-spacing: 0.02em;
+}
 
 .quiz-progress {
+  display: flex;
+  gap: 6px;
+}
+
+.quiz-segment {
   flex: 1;
   height: 5px;
   background: var(--champagne);
   border-radius: var(--radius-pill);
-  overflow: hidden;
+  transition: background 0.3s ease;
 }
 
-.quiz-progress-bar {
-  height: 100%;
-  width: 25%;
+.quiz-segment.filled {
   background: var(--dusty-rose);
-  border-radius: var(--radius-pill);
-  transition: width 0.3s ease;
+}
+
+.question-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dusty-rose);
+  font-weight: 600;
+  margin: 0 0 8px;
 }
 
 .question-subtitle {
   font-size: 13.5px;
   color: var(--plum-soft);
-  text-align: center;
+  text-align: left;
   margin: -18px 0 24px;
 }
 
@@ -216,43 +233,85 @@ a { color: inherit; }
   font-size: clamp(24px, 6vw, 30px);
   font-weight: 600;
   margin: 0 0 28px;
-  text-align: center;
+  text-align: left;
   color: var(--plum);
 }
 
-.option-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+.option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 36px;
 }
 
-.option-card {
-  background: var(--champagne);
-  border: none;
-  border-radius: 20px;
-  padding: 24px 14px;
+.option-row {
+  background: var(--ivory);
+  border: 1.5px solid var(--champagne);
+  border-radius: 16px;
+  padding: 16px 18px;
   font-size: 15px;
-  font-weight: 500;
   color: var(--plum);
-  min-height: 86px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+  justify-content: space-between;
+  gap: 14px;
+  text-align: left;
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
 
-.option-card:hover { background: var(--blush); }
-.option-card:active { transform: scale(0.98); }
+.option-row:hover { background: var(--blush); }
+.option-row:active { transform: scale(0.99); }
 
-.option-card.selected {
-  background: var(--plum);
-  color: var(--ivory);
+.option-row.selected {
+  background: var(--blush);
+  border-color: var(--dusty-rose);
 }
 
-.option-card:nth-last-child(1):nth-child(odd) {
-  grid-column: 1 / -1;
+.option-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.option-label {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--plum);
+}
+
+.option-note {
+  font-size: 12.5px;
+  color: var(--plum-soft);
+}
+
+.option-indicator {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid var(--champagne);
+  background: var(--ivory);
+  position: relative;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.option-indicator.radio { border-radius: 50%; }
+.option-indicator.checkbox { border-radius: 6px; }
+
+.option-row.selected .option-indicator {
+  background: var(--dusty-rose);
+  border-color: var(--dusty-rose);
+}
+
+.option-row.selected .option-indicator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 9px;
+  border-right: 2px solid var(--ivory);
+  border-bottom: 2px solid var(--ivory);
+  transform: translate(-50%, -60%) rotate(45deg);
 }
 
 .generate-btn {
@@ -285,35 +344,21 @@ a { color: inherit; }
 }
 
 .workout-card {
-  background: #ffffff;
-  border-radius: var(--radius-lg);
-  padding: 32px 26px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid var(--champagne);
+  padding: 0;
 }
 
 .workout-title {
   font-family: var(--font-display);
   font-size: clamp(28px, 7vw, 36px);
   font-weight: 600;
-  margin: 4px 0 14px;
+  margin: 4px 0 10px;
   color: var(--plum);
 }
 
 .workout-meta {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 18px;
-}
-
-.workout-meta span {
-  background: var(--blush);
-  color: var(--plum);
-  font-size: 12.5px;
-  font-weight: 600;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
+  font-size: 13.5px;
+  color: var(--plum-soft);
+  margin: 0 0 18px;
 }
 
 .workout-intro {
@@ -342,86 +387,55 @@ a { color: inherit; }
   font-size: 20px;
   font-weight: 600;
   color: var(--plum);
-  margin: 28px 0 12px;
+  margin: 28px 0 4px;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--champagne);
+  border-bottom: 1.5px solid var(--plum);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.section-count {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--plum-soft);
 }
 
 .exercise-list {
   list-style: none;
   margin: 0 0 8px;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
 
 .exercise-row {
   border-bottom: 1px solid var(--champagne);
+  padding: 16px 0;
 }
 
 .exercise-row:last-child { border-bottom: none; }
 
-.exercise-row details summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 14px 0;
+.exercise-row-top {
   display: flex;
   align-items: baseline;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
-.exercise-row details summary::-webkit-details-marker,
-.exercise-card details summary::-webkit-details-marker { display: none; }
-
-.exercise-row details summary::after,
-.exercise-card details summary::after {
-  content: "+";
-  margin-left: auto;
-  color: var(--dusty-rose);
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
-.exercise-row details[open] summary::after,
-.exercise-card details[open] summary::after { content: "–"; }
-
-.exercise-card {
-  list-style: none;
-  background: var(--ivory);
-  border: 1px solid var(--champagne);
-  border-radius: 18px;
-  padding: 4px 18px;
-}
-
-.exercise-card details summary {
-  cursor: pointer;
-  padding: 16px 0;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-
 .exercise-step {
-  font-family: var(--font-display);
-  font-weight: 700;
-  color: var(--ivory);
-  background: var(--dusty-rose);
-  font-size: 14px;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-weight: 600;
+  color: var(--plum-soft);
+  font-size: 12.5px;
   flex-shrink: 0;
-  margin-top: 1px;
 }
 
 .exercise-heading {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  flex: 1;
+  min-width: 140px;
 }
 
 .exercise-name {
@@ -433,72 +447,69 @@ a { color: inherit; }
 
 .muscle-tag {
   align-self: flex-start;
-  background: var(--champagne);
-  color: var(--plum);
+  color: var(--plum-soft);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
 }
 
-.exercise-extra {
-  font-size: 13px;
-  color: var(--plum-soft);
-}
-
-.exercise-meta {
-  margin: 0 0 10px;
-  font-size: 13.5px;
+.muscle-tag::before {
+  content: "•";
   color: var(--dusty-rose);
+  margin-right: 5px;
+}
+
+.exercise-amount {
+  margin-left: auto;
+  font-size: 13.5px;
   font-weight: 600;
-  padding-left: 38px;
+  color: var(--dusty-rose);
+  white-space: nowrap;
 }
 
 .exercise-instructions {
-  margin: 0 0 14px;
+  margin: 8px 0 0;
   font-size: 14px;
   line-height: 1.6;
   color: var(--plum);
-  padding-left: 38px;
+  padding-left: 30px;
 }
 
 .row-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 0 0 16px;
-  padding-left: 38px;
+  gap: 18px;
+  margin: 10px 0 0;
+  padding-left: 30px;
+}
+
+.rest-timer-btn,
+.swap-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .rest-timer-btn {
-  background: var(--champagne);
-  border: none;
-  border-radius: var(--radius-pill);
-  padding: 7px 16px;
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--plum);
+  color: var(--plum-soft);
 }
 
 .rest-timer-btn.timer-running {
-  background: var(--plum);
-  color: var(--ivory);
+  color: var(--plum);
 }
 
 .swap-btn {
-  background: transparent;
-  border: 1px solid var(--dusty-rose);
-  border-radius: var(--radius-pill);
-  padding: 6px 16px;
-  font-size: 12.5px;
-  font-weight: 600;
   color: var(--dusty-rose);
 }
 
+.rest-timer-btn:hover,
 .swap-btn:hover {
-  background: var(--blush);
+  opacity: 0.7;
 }
 
 .disclaimer {
@@ -560,8 +571,7 @@ a { color: inherit; }
 /* ---------- Small screens polish ---------- */
 
 @media (max-width: 380px) {
-  .option-card { padding: 20px 10px; min-height: 76px; font-size: 14px; }
-  .workout-card { padding: 26px 18px; }
+  .option-row { padding: 14px 14px; }
 }
 
 /* ---------- Reduced motion ---------- */

@@ -24,16 +24,14 @@ function formatAmount(item) {
   return item.perSide ? `${amount} each side` : amount;
 }
 
-function exerciseBlock(exercise, extra = "") {
+function exerciseBlock(exercise, stepLabel = "") {
   return `
     <li class="exercise-row">
-      <details>
-        <summary>
-          <span class="exercise-name">${exercise.name}</span>
-          ${extra ? `<span class="exercise-extra">${extra}</span>` : ""}
-        </summary>
-        <p class="exercise-instructions">${exercise.instructions}</p>
-      </details>
+      <div class="exercise-row-top">
+        ${stepLabel ? `<span class="exercise-step">${stepLabel}</span>` : ""}
+        <span class="exercise-name">${exercise.name}</span>
+      </div>
+      <p class="exercise-instructions">${exercise.instructions}</p>
     </li>`;
 }
 
@@ -44,50 +42,44 @@ function sequenceBlock(item, index) {
   const muscleLabel = MUSCLE_LABELS[item.exercise.muscle] || "";
 
   return `
-    <li class="exercise-card" data-index="${index}">
-      <details open>
-        <summary>
-          <span class="exercise-step">${index + 1}</span>
-          <span class="exercise-heading">
-            <span class="exercise-name" id="exercise-name-${index}">${item.exercise.name}</span>
-            ${muscleLabel ? `<span class="muscle-tag" id="muscle-tag-${index}">${muscleLabel}</span>` : ""}
-          </span>
-        </summary>
-        <p class="exercise-meta">${item.sets} sets · ${formatAmount(item)}</p>
-        <p class="exercise-instructions" id="exercise-instructions-${index}">${item.exercise.instructions}</p>
-        <div class="row-actions">
-          <button class="rest-timer-btn" id="${timerId}" type="button" data-rest="${item.restSeconds}">Rest ${item.restSeconds}s</button>
-          ${hasAlternatives ? `<button class="swap-btn" type="button" data-index="${index}">Swap exercise ↻</button>` : ""}
-        </div>
-      </details>
+    <li class="exercise-row" data-index="${index}">
+      <div class="exercise-row-top">
+        <span class="exercise-step">${String(index + 1).padStart(2, "0")}</span>
+        <span class="exercise-heading">
+          <span class="exercise-name" id="exercise-name-${index}">${item.exercise.name}</span>
+          ${muscleLabel ? `<span class="muscle-tag" id="muscle-tag-${index}">${muscleLabel}</span>` : ""}
+        </span>
+        <span class="exercise-amount">${item.sets} × ${formatAmount(item)}</span>
+      </div>
+      <p class="exercise-instructions" id="exercise-instructions-${index}">${item.exercise.instructions}</p>
+      <div class="row-actions">
+        <button class="rest-timer-btn" id="${timerId}" type="button" data-rest="${item.restSeconds}">Rest ${item.restSeconds}s</button>
+        ${hasAlternatives ? `<button class="swap-btn" type="button" data-index="${index}">Swap exercise</button>` : ""}
+      </div>
     </li>`;
 }
 
 export function renderResults(container, workout, shareUrl) {
-  const warmupHtml = workout.warmup.map((ex) => exerciseBlock(ex)).join("");
+  const warmupHtml = workout.warmup.map((ex, i) => exerciseBlock(ex, `W${i + 1}`)).join("");
   const sequenceHtml = workout.sequence.map((item, i) => sequenceBlock(item, i)).join("");
-  const cooldownHtml = workout.cooldown.map((ex) => exerciseBlock(ex)).join("");
+  const cooldownHtml = workout.cooldown.map((ex, i) => exerciseBlock(ex, `C${i + 1}`)).join("");
 
   container.innerHTML = `
     <article class="workout-card">
       <p class="eyebrow">${FOCUS_LABELS[workout.focusArea] || ""}</p>
       <h1 class="workout-title">${workout.name}</h1>
-      <div class="workout-meta">
-        <span>${workout.requestedTime} min</span>
-        <span>${EQUIPMENT_LABELS[workout.equipment] || ""}</span>
-        <span>${LEVEL_LABELS[workout.difficulty] || ""}</span>
-      </div>
+      <p class="workout-meta">${workout.requestedTime} min · ${EQUIPMENT_LABELS[workout.equipment] || ""} · ${LEVEL_LABELS[workout.difficulty] || ""}</p>
       <p class="workout-intro">${workout.intro}</p>
       <p class="workout-tempo">${workout.tempoNote}</p>
       ${workout.isClosestMatch ? '<p class="closest-match-note">We matched you to our closest routine for this combination.</p>' : ""}
 
-      <h2 class="section-label">Warm-up</h2>
+      <h2 class="section-label"><span>Warm-up</span><span class="section-count">${workout.warmup.length} moves</span></h2>
       <ul class="exercise-list">${warmupHtml}</ul>
 
-      <h2 class="section-label">The workout</h2>
+      <h2 class="section-label"><span>The workout</span><span class="section-count">${workout.sequence.length} exercises</span></h2>
       <ul class="exercise-list">${sequenceHtml}</ul>
 
-      <h2 class="section-label">Cooldown</h2>
+      <h2 class="section-label"><span>Cooldown</span><span class="section-count">${workout.cooldown.length} stretches</span></h2>
       <ul class="exercise-list">${cooldownHtml}</ul>
 
       <p class="disclaimer">This workout is for general fitness purposes and isn't a substitute for medical advice. Stop if anything feels painful, modify where needed, and check with a doctor before starting a new exercise routine.</p>

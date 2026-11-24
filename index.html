@@ -16,10 +16,14 @@
   <section id="view-landing" class="view">
     <div class="landing-inner">
       <p class="eyebrow">THE BALLERINA BODY STUDIO</p>
-      <div class="ribbon-divider" aria-hidden="true"></div>
       <h1 class="headline">Your ballerina era<br>starts here.</h1>
       <p class="subhead">A little movement, made just for you.</p>
       <p class="supporting">Create your own personalised, ballet-inspired workout in seconds.</p>
+      <ul class="landing-features">
+        <li>Warm-up, workout and cooldown in every plan</li>
+        <li>Glutes-first leg work — no quad-dominant moves</li>
+        <li>Works with or without equipment</li>
+      </ul>
       <button id="start-quiz-btn" class="btn-primary" type="button">Create my workout</button>
       <p class="free-note">Free · No sign-up · No app to download</p>
     </div>
@@ -28,10 +32,11 @@
   <section id="view-quiz" class="view hidden">
     <div class="quiz-shell">
       <div class="quiz-top">
-        <button id="quiz-back-btn" class="quiz-back" type="button" aria-label="Go back">&larr;</button>
-        <div class="quiz-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-          <div id="quiz-progress-bar" class="quiz-progress-bar"></div>
+        <div class="quiz-top-row">
+          <button id="quiz-back-btn" class="quiz-back" type="button" aria-label="Go back">&larr; Back</button>
+          <span id="quiz-step-label" class="quiz-step-label"></span>
         </div>
+        <div id="quiz-progress" class="quiz-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
       <div id="quiz-question-container"></div>
     </div>

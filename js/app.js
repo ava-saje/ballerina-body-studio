@@ -9,9 +9,17 @@ const views = {
 };
 
 const questionContainer = document.getElementById("quiz-question-container");
-const progressBar = document.getElementById("quiz-progress-bar");
+const progressTrack = document.getElementById("quiz-progress");
+const stepLabel = document.getElementById("quiz-step-label");
 const backBtn = document.getElementById("quiz-back-btn");
 const resultsContainer = document.getElementById("results-container");
+
+QUESTIONS.forEach(() => {
+  const segment = document.createElement("div");
+  segment.className = "quiz-segment";
+  progressTrack.appendChild(segment);
+});
+const progressSegments = Array.from(progressTrack.children);
 
 let exercisesData = null;
 let templatesData = null;
@@ -54,9 +62,14 @@ function renderQuestion() {
   const optionsHtml = question.options
     .map((opt) => {
       const isSelected = question.multiSelect ? selectedSet.has(opt.value) : currentValue === opt.value;
+      const indicatorClass = question.multiSelect ? "checkbox" : "radio";
       return `
-      <button type="button" class="option-card ${isSelected ? "selected" : ""}" data-value="${opt.value}">
-        ${opt.label}
+      <button type="button" class="option-row ${isSelected ? "selected" : ""}" data-value="${opt.value}">
+        <span class="option-text">
+          <span class="option-label">${opt.label}</span>
+          ${opt.note ? `<span class="option-note">${opt.note}</span>` : ""}
+        </span>
+        <span class="option-indicator ${indicatorClass}" aria-hidden="true"></span>
       </button>`;
     })
     .join("");
@@ -65,9 +78,10 @@ function renderQuestion() {
   const buttonLabel = isLast ? "Generate my workout ✦" : "Continue";
 
   questionContainer.innerHTML = `
+    <p class="question-eyebrow">${question.eyebrow || ""}</p>
     <h2 class="question-title">${question.title}</h2>
     ${question.subtitle ? `<p class="question-subtitle">${question.subtitle}</p>` : ""}
-    <div class="option-grid">${optionsHtml}</div>
+    <div class="option-list">${optionsHtml}</div>
     ${
       needsButton
         ? `<button type="button" id="primary-btn" class="btn-primary generate-btn ${isAnswered(question) ? "visible" : ""}">${buttonLabel}</button>`
@@ -75,7 +89,7 @@ function renderQuestion() {
     }
   `;
 
-  questionContainer.querySelectorAll(".option-card").forEach((btn) => {
+  questionContainer.querySelectorAll(".option-row").forEach((btn) => {
     btn.addEventListener("click", () => onOptionSelected(question, btn.dataset.value));
   });
 
@@ -84,7 +98,10 @@ function renderQuestion() {
     primaryBtn.addEventListener("click", handlePrimaryClick);
   }
 
-  progressBar.style.width = `${((state.questionIndex + 1) / QUESTIONS.length) * 100}%`;
+  progressSegments.forEach((segment, i) => {
+    segment.classList.toggle("filled", i <= state.questionIndex);
+  });
+  stepLabel.textContent = `Step ${state.questionIndex + 1} of ${QUESTIONS.length}`;
 }
 
 function onOptionSelected(question, value) {
