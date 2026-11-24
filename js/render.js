@@ -99,10 +99,10 @@ export function renderResults(container, workout, shareUrl) {
     </article>
 
     <section class="guide-promo">
-      <div class="guide-cover-placeholder" aria-hidden="true">BALLERINA<br>BODY<br>GUIDE</div>
+      <img class="guide-cover-image" src="assets/guide-cover.jpg" alt="The Slim &amp; Sculpted Method guide cover">
       <h2 class="guide-heading">Ready for your full ballerina body routine?</h2>
-      <p class="guide-copy">Your personalised workout is just the beginning. Discover The Ballerina Body Guide for my complete approach to training, with more detailed workouts and structured routines.</p>
-      <a href="${GUIDE_URL}" class="btn-primary guide-btn">Explore The Ballerina Body Guide</a>
+      <p class="guide-copy">Your personalised workout is just the beginning. Discover The Slim &amp; Sculpted Method for my complete approach to training, with more detailed workouts and structured routines.</p>
+      <a href="${GUIDE_URL}" class="btn-primary guide-btn">Explore The Slim &amp; Sculpted Method</a>
     </section>
   `;
 

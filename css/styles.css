@@ -530,22 +530,13 @@ a { color: inherit; }
   text-align: center;
 }
 
-.guide-cover-placeholder {
-  width: 108px;
-  height: 148px;
+.guide-cover-image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
   margin: 0 auto 18px;
-  background: linear-gradient(160deg, var(--plum), var(--dusty-rose));
-  color: var(--ivory);
+  display: block;
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  line-height: 1.5;
-  text-align: center;
   box-shadow: var(--shadow-soft);
 }
 
