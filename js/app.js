@@ -13,8 +13,6 @@ const progressBar = document.getElementById("quiz-progress-bar");
 const backBtn = document.getElementById("quiz-back-btn");
 const resultsContainer = document.getElementById("results-container");
 
-const STORAGE_KEY = "ballerinaBodyStudio.lastAnswers";
-
 let exercisesData = null;
 let templatesData = null;
 
@@ -37,23 +35,6 @@ async function loadData() {
   ]);
   exercisesData = await exercisesRes.json();
   templatesData = await templatesRes.json();
-}
-
-function saveAnswersLocally(answers) {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(answers));
-  } catch (err) {
-    /* storage unavailable, ignore */
-  }
-}
-
-function loadAnswersLocally() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : null;
-  } catch (err) {
-    return null;
-  }
 }
 
 function isAnswered(question) {
@@ -177,7 +158,6 @@ function generateAndShow(answers) {
   const params = answersToParams(answers);
   const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
   window.history.replaceState({}, "", `?${params.toString()}`);
-  saveAnswersLocally(answers);
   renderResults(resultsContainer, workout, shareUrl);
   showView("results");
 }
@@ -187,10 +167,7 @@ function handleGenerate() {
 }
 
 function startQuiz() {
-  const remembered = loadAnswersLocally();
-  if (remembered) {
-    state.answers = { ...state.answers, ...remembered };
-  }
+  state.answers = { focus: null, time: null, equipment: [], level: null };
   state.questionIndex = 0;
   showView("quiz");
   renderQuestion();

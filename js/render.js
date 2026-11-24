@@ -1,7 +1,7 @@
 import { FOCUS_LABELS, EQUIPMENT_LABELS, LEVEL_LABELS } from "./questions.js";
 import { attachRestTimer } from "./timer.js";
 
-const GUIDE_URL = "#";
+const GUIDE_URL = "https://stan.store/avasaje/p/the-strong--sculpted-method";
 
 const MUSCLE_LABELS = {
   glutes: "Glutes",

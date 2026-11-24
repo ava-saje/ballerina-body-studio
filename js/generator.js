@@ -9,6 +9,13 @@ const DIFFICULTY_RULES = {
 const MIN_SETS = 2;
 const MIN_REST = 10;
 
+const FOCUS_MAX_EXERCISES = {
+  "legs-glutes": 6,
+  "arms-posture": 8,
+  core: 7,
+  "full-body": 6
+};
+
 function roundToNearest(value, step) {
   return Math.max(step, Math.round(value / step) * step);
 }
@@ -22,17 +29,20 @@ function scaleSequenceItem(item, difficulty) {
   return { ...item, sets, restSeconds, value };
 }
 
-function buildRoundsForDuration(sequence, time) {
-  if (time <= 20) {
-    return [sequence];
-  }
-  if (time <= 30) {
-    return [sequence, sequence.slice(0, 2)];
-  }
-  if (time <= 45) {
-    return [sequence, sequence];
-  }
-  return [sequence, sequence, sequence.slice(0, 2)];
+// Longer durations never add more exercises than the focus area's cap allows.
+// Extra time first fills the sequence up to that cap, then adds sets instead of more exercises.
+function buildSequenceForDuration(sequence, time, maxCount) {
+  const extraSlots = Math.max(0, maxCount - sequence.length);
+  let extraToAdd = 0;
+  if (time >= 45) extraToAdd = extraSlots;
+  else if (time >= 30) extraToAdd = Math.min(2, extraSlots);
+  return [...sequence, ...sequence.slice(0, extraToAdd)];
+}
+
+function durationSetsBonus(time) {
+  if (time >= 60) return 2;
+  if (time >= 45) return 1;
+  return 0;
 }
 
 function findTemplate(templates, focus, equipmentSet) {
@@ -63,13 +73,12 @@ export function generateWorkout(answers, exercisesData, templatesData) {
     throw new Error("No matching workout template was found.");
   }
 
-  const rounds = buildRoundsForDuration(template.sequence, time);
-  const flatSequence = [];
-  rounds.forEach((items) => {
-    items.forEach((item) => {
-      flatSequence.push(scaleSequenceItem(item, level));
-    });
-  });
+  const maxCount = FOCUS_MAX_EXERCISES[template.focusArea] || template.sequence.length;
+  const fullSequence = buildSequenceForDuration(template.sequence, time, maxCount);
+  const setsBonus = durationSetsBonus(time);
+  const flatSequence = fullSequence.map((item) =>
+    scaleSequenceItem({ ...item, sets: item.sets + setsBonus }, level)
+  );
 
   const warmup = template.warmupIds.map((id) => exerciseMap.get(id));
   const cooldown = template.cooldownIds.map((id) => exerciseMap.get(id));
