@@ -85,8 +85,11 @@ export function renderResults(container, workout, shareUrl) {
       <p class="disclaimer">This workout is for general fitness purposes and isn't a substitute for medical advice. Stop if anything feels painful, modify where needed, and check with a doctor before starting a new exercise routine.</p>
 
       <div class="results-actions">
-        <button id="edit-preferences-btn" class="btn-secondary" type="button">Change my preferences</button>
-        <button id="share-btn" class="btn-secondary" type="button">Share this workout</button>
+        <button id="regenerate-btn" class="btn-primary" type="button">Regenerate</button>
+        <div class="results-actions-row">
+          <button id="start-over-btn" class="btn-secondary" type="button">Start over</button>
+          <button id="share-btn" class="btn-secondary" type="button">Share this workout</button>
+        </div>
       </div>
     </article>
 

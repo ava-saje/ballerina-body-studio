@@ -523,12 +523,18 @@ a { color: inherit; }
 
 .results-actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 12px;
   margin-top: 22px;
 }
 
-.results-actions .btn-secondary { flex: 1; }
+.results-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.results-actions-row .btn-secondary { flex: 1; }
 
 /* ---------- Guide promo ---------- */
 

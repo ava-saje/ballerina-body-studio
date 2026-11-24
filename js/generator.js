@@ -63,7 +63,8 @@ function byId(list) {
   return map;
 }
 
-export function generateWorkout(answers, exercisesData, templatesData) {
+export function generateWorkout(answers, exercisesData, templatesData, options = {}) {
+  const { randomize = false } = options;
   const { focus, time, equipment, level } = answers;
   const equipmentSet = Array.isArray(equipment) ? equipment : [equipment];
   const exerciseMap = byId(exercisesData.exercises);
@@ -85,11 +86,15 @@ export function generateWorkout(answers, exercisesData, templatesData) {
 
   const sequence = flatSequence.map((item) => {
     const exercise = exerciseMap.get(item.exerciseId);
-    const alternatives = (exercise.alternatives || [])
-      .map((id) => exerciseMap.get(id))
-      .filter(Boolean);
+    let choiceIds = [item.exerciseId, ...(exercise.alternatives || [])];
+    if (randomize && choiceIds.length > 1) {
+      const pick = Math.floor(Math.random() * choiceIds.length);
+      choiceIds = [choiceIds[pick], ...choiceIds.filter((_, i) => i !== pick)];
+    }
+    const chosenExercise = exerciseMap.get(choiceIds[0]);
+    const alternatives = choiceIds.slice(1).map((id) => exerciseMap.get(id)).filter(Boolean);
     return {
-      exercise,
+      exercise: chosenExercise,
       sets: item.sets,
       metric: item.metric,
       value: item.value,

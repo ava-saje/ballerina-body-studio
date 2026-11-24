@@ -166,11 +166,12 @@ function paramsToAnswers(params) {
   return null;
 }
 
-function generateAndShow(answers) {
+function generateAndShow(answers, options = {}) {
   const workout = generateWorkout(
     { ...answers, time: Number(answers.time) },
     exercisesData,
-    templatesData
+    templatesData,
+    options
   );
   const params = answersToParams(answers);
   const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
@@ -183,6 +184,10 @@ function handleGenerate() {
   generateAndShow(state.answers);
 }
 
+function handleRegenerate() {
+  generateAndShow(state.answers, { randomize: true });
+}
+
 function startQuiz() {
   state.answers = { focus: null, time: null, equipment: [], level: null };
   state.questionIndex = 0;
@@ -192,10 +197,11 @@ function startQuiz() {
 
 function attachGlobalResultsHandlers() {
   resultsContainer.addEventListener("click", (e) => {
-    if (e.target && e.target.id === "edit-preferences-btn") {
-      state.questionIndex = 0;
-      showView("quiz");
-      renderQuestion();
+    if (e.target && e.target.id === "start-over-btn") {
+      startQuiz();
+    }
+    if (e.target && e.target.id === "regenerate-btn") {
+      handleRegenerate();
     }
   });
 }
